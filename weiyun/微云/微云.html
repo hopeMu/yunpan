@@ -1,0 +1,1637 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+        }
+        html,body{
+            height:100%;
+            overflow: hidden;
+        }
+        a{
+            color:#333;
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+
+        /*头部*/
+        .header{
+            height:60px;
+            background: #F5F8FA;
+        }
+
+        .mod-act-group{
+            float: right;
+            margin-right:68px;
+        }
+        .mod-act-group .info {
+            float: left;
+            line-height: 60px;
+            font-size:14px;
+            text-align: center;
+            padding:0 5px;
+        }
+        .mod-act-group .info a i{
+            transition:.3s;
+        }
+
+        .text-orange{
+            color:#FF9805;
+        }
+        .logo{
+            height:100%;
+            overflow: hidden;
+            float: left;
+        }
+        .logo a{
+            display: block;
+            background: url(img/logo.jpg);
+            width: 100px;
+            height:40px;
+            margin-top:10px;
+            margin-left:53px;
+        }
+
+        .mod-act{
+            float: left;
+            height:100%;
+            margin-left:105px;
+            margin-top:12px;
+        }
+        .mod-act a{
+            position: relative;
+            display: block;
+            width: 34px;
+            height: 34px;
+            border-radius: 2px;
+            text-align: center;
+            background: #E9EEF3;
+            border: 1px solid transparent;
+            font-size:14px;
+            line-height: 34px;
+            text-align: center;
+        }
+        .mod-act a:hover{
+            border-color: #ccc;
+        }
+
+        .mod-search{
+            height:36px;
+            float: left;
+            margin-left:16px;
+            margin-top:12px;
+            position: relative;
+        }
+        .mod-search input{
+            height:34px;
+            width:200px;
+            border:1px solid transparent;
+            padding:0 40px 0 10px;
+            background: #E9EEF3;
+        }
+        .mod-search a{
+            position: absolute;
+            width:36px;
+            height:36px;
+            text-align: center;
+            line-height: 36px;
+            right:0;
+            top:0;
+        }
+
+        /*主体*/
+        .main{
+            /*background: orchid;*/
+            position: absolute;
+            top:60px;
+            left:0;
+            right:0;
+            bottom:0;
+        }
+
+        .main .side{
+            height:100%;
+            position: absolute;
+            width:200px;
+            top:0;
+            left:0;
+        }
+        .main .content{
+            padding:0 0 0 200px;
+            position: relative;
+            height:100%;
+        }
+
+        .side-heading .ava{
+            display: block;
+            width: 58px;
+            height: 58px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 29px;
+            margin-top:16px;
+        }
+        .side-heading .ava img{
+            width: 100%;
+            height: 100%;
+        }
+        .side-body{
+            margin-top:16px;
+            overflow: auto;
+            height:400px;
+        }
+        .side-body .btns{
+            text-align: center;
+        }
+        .side-body .btns .btn{
+            display: inline-block;
+            text-align: center;
+            border-radius:2px;
+            width:80px;
+            height:25px;
+            line-height: 25px;
+            color:#00A4FF;
+            border:1px solid #00A4FF;
+        }
+        .side-body .btns .btn:hover{
+            background-color:rgba(59,147,255,.1);
+            text-decoration: none;
+        }
+        .side-body ul{
+            width:100px;
+            border-bottom:1px solid #ccc;
+            margin:16px auto -1px;
+            list-style: none;
+
+        }
+        .side-body ul li{
+
+        }
+        .side-body li a{
+            display: block;
+            width:100px;
+            margin-left:-40px;
+            height:38px;
+            line-height: 38px;
+            border-left:4px solid transparent;
+            padding-left:26px;
+            padding-right:50px;
+            text-indent:8px;
+        }
+        .side-body li a:hover{
+            text-decoration: none;
+            background-color:rgba(59,147,255,.1) ;
+        }
+        .side-body li a.active,
+        .side-body li a.active:hover{
+            color:#0097EB;
+            text-decoration: none;
+            border-left:4px solid #0097EB;
+            background-color:transparent;
+        }
+
+        .main .center {
+            padding:0 70px 0 30px;
+            height:100%;
+        }
+
+        .main .center .crumbs{
+            height:60px;
+            line-height: 60px;
+            font-family: "Comic Sans MS";
+        }
+        .main .center .crumbs .crumbs-btn{
+            float: left;
+            height:100%;
+        }
+
+        .main .center .crumbs .btns{
+            float: right;
+        }
+        .main .center .crumbs .btns .btn{
+            display: inline-block;
+            padding:5px 20px;
+            border:1px solid #ccc;
+            line-height: normal;
+            border-radius:2px;
+            margin:0 5px;
+        }
+        .main .center .crumbs .btns .btn:hover{
+            text-decoration: none;
+            background-color:rgba(59,147,255,.1);
+        }
+
+        .main .center .crumbs .btns .btn-primary{
+            background-color: #00A4FF;
+            color:#fff;
+            border-color:transparent;
+        }
+
+        .main .center .crumbs .btns .btn-primary:hover{
+            background-color:#0097EA;
+        }
+
+        .list {
+            margin-left:-30px;
+        }
+        .list-content{
+            overflow: auto;
+        }
+
+        .list-item{
+            /*background-color: red;*/
+            height:40px;
+            line-height: 40px;
+            text-align: left;
+            border-bottom:1px solid #ccc;
+            margin-left:30px;
+        }
+        .list-item .name{
+            position: relative;
+            padding-right:300px;
+        }
+        .list-item .edit-time{
+            position: absolute;
+            right:150px;
+            top:0;
+            width:150px;
+        }
+        .list-item .file-size{
+            position: absolute;
+            right:0px;
+            top:0;
+            width:150px;
+        }
+
+        .list-con{
+            margin-left:100px;
+            height:50px;
+            line-height:50px;
+        }
+
+        .list-con a{
+            display: block;
+            position: relative;
+            padding-left:30px;
+            margin-left:-100px;
+        }
+        .list-con a:hover,.list-con a.active{
+            background-color: rgba(59,147,255,.1);
+            text-decoration: none;
+        }
+
+        .list-con .check-box,
+        .list-con .file{
+            float: left;
+            width:50px;
+            text-align: center;
+            font-size:18px;
+        }
+
+        .list-con .check-box{
+            position: absolute;
+            left:0;
+            top:0;
+            width:30px;
+            font-size:0;
+            overflow: hidden;
+        }
+        .list-con .file{
+            width:70px;
+            font-size:28px;
+            color:#4FB2FC;
+        }
+
+        .list-con a:hover .check-box,.list-con a.active .check-box{
+            width:30px;
+            font-size:18px;
+        }
+
+
+        .thumb .list-con{
+            float: left;
+            border-color:transparent;
+            width:114px;
+            height:130px;
+            padding:0;
+            margin:0;
+            position: relative;
+        }
+        .thumb .list-con a{
+            margin:0;
+            padding-bottom:20px;
+        }
+        .thumb .list-header{
+            display: none;
+        }
+        .thumb .list-con .check-box{
+            position: absolute;
+            top:-8px;
+            left:-2px;
+            display: none;
+            color:#ccc;
+        }
+        .thumb .list-con a:hover .check-box{
+            display: block;
+        }
+        .thumb .list-con .name{
+            padding:0;
+            text-align: center;
+            line-height: 20px;
+        }
+        .thumb .list-con .file{
+            width:100%;
+            margin-top:10px;
+            height:70px;
+            line-height: 70px;
+            text-align: center;
+            font-size:56px;
+        }
+
+        .thumb .list-con .file-size,
+        .thumb .list-con .edit-time{
+            display: none;
+        }
+
+        .all{
+            display: none;
+        }
+
+
+        .toggle-box{
+            display: none;
+            height:10px;
+        }
+
+
+
+        /*move-to*/
+        #move-to{
+            display: none;
+            position: absolute;
+            width:500px;
+            height:500px;
+            top:50%;
+            left:50%;
+            margin-left:-250px;
+            margin-top:-250px;
+            background-color: #fff;
+            border:1px solid #666;
+            box-shadow: 0 0 10px #ddd;
+            overflow: auto;
+            z-index: 100;
+        }
+        #move-to ul{
+            list-style: none;
+        }
+        #move-to li{
+            padding-left:30px;
+            line-height: 30px;
+        }
+
+
+
+
+        ::-webkit-scrollbar {
+            width: 16px;
+            height: 10px;
+            overflow: visible;
+        }
+        ::-webkit-scrollbar-button {
+            width: 0;
+            height: 0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #d8dce5;
+            border: solid transparent;
+            border-width: 1px 0 1px 8px;
+            background-clip: padding-box;
+        }
+
+        .icon{
+            font-size:18px;
+        }
+
+
+
+
+        /*任务列表样式*/
+        .mod-act{
+            position: relative;
+            z-index: 10;
+        }
+        #_manager{
+            display: none;
+            width:200px;
+            height:200px;
+            border:1px solid #ccc;
+            box-shadow: 0 0 4px #ccc;
+            background-color: #fff;
+            border-top:4px solid #0066FF;
+            position: absolute;
+            left:0;
+            top:34px;
+        }
+        #_manager ul{
+            list-style: none;
+            padding:0 30px;
+            border-bottom:1px solid #ccc;
+            position: relative;
+        }
+        #_manager ul li{
+            float: left;
+            font-size:14px;
+            margin-right:10px;
+            line-height: 30px;
+            height:30px;
+        }
+        #_manager ul li.active{
+            color:#0066FF;
+        }
+        #_manager ul li.line{
+            width:100px;
+            background-color: #0066FF;
+            height:2px;
+            position: absolute;
+            bottom:-1px;
+            left:30px;
+        }
+
+        #_manager h5{
+            line-height: 60px;
+            padding:0 30px;
+            font-size:24px;
+        }
+
+
+        .mark{
+            position: absolute;
+            border:1px solid #000;
+            background-color: rgba(0,0,0,.2);
+            display: none;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        /*清浮动*/
+        .clearFix{
+            display: block;
+        }
+        .clearFix:before{
+            display: block;
+            content:'';
+        }
+        .clearFix:after{
+            display: block;
+            content:'';
+            clear:both;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<!--写结构 不用考虑其他因素-->
+
+
+<!--头部-->
+<div class="header clearFix">
+    <div class="mod-act-group">
+        <div class="info text-orange">开会员最多送一年</div>
+        <div class="info"><a href="#">下载客户端</a></div>
+        <div class="info" style="position: relative;z-index: 10;">
+            <a id="personal" href="#">evear <i class="fa fa-sort-desc"></i></a>
+            <!--个人信息-->
+            <div id="personal-info" style="background-color: #fff;border:1px solid #ccc;box-shadow: 0 0 4px #ccc;width:200px;padding:15px; text-align: left;line-height:30px;right:0;top:40px;position: absolute; display: none;">
+                <ul style="list-style: none">
+                    <li>evear</li>
+                    <li> 超级会员 <a href="#">开通</a></li>
+                    <li>
+                        容量 2.5G/10T <br>
+                        <div style="height:5px;border:1px solid #000;"><div style="background-color: #6DE0FD;width:10px;height:100%;"></div></div>
+                    </li>
+                    <li style="border-bottom:1px solid #000;">开启每日急速上传</li>
+                    <li>帮助与反馈</li>
+                    <li>帮助与反馈</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="logo"><a href="#"></a></div>
+    <div class="mod-act">
+        <a title="任务列表" href="javascript:;"><i class="fa fa-download"></i></a>
+        <div id="_manager">
+            <div class="box">
+                <h5>任务列表</h5>
+                <ul class="clearFix">
+                    <li class="active">进行中（0）</li>
+                    <li>已完成</li>
+                    <li class="line"></li>
+                </ul>
+                <div class="down-list">
+                    下载列表。。。
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mod-search">
+        <input class="search" type="text" value="" placeholder="搜索全部微云" >
+        <a href="#"><i class="fa fa-search"></i></a>
+    </div>
+</div>
+
+
+<!--主体-->
+<div class="main">
+    <div class="content">
+        <div class="center">
+
+            <!--面包屑-->
+            <div class="crumbs">
+                <div class="btns" style="position: relative; z-index: 9;">
+
+                    <div id="tool" style="float: left;font-size:0;margin-top:7px;display: none;">
+                        <a style="margin-left: 0;font-size:16px;margin-right:-1px;" href="#" class="btn">下载</a>
+                        <a style="margin-left: 0;font-size:16px;margin-right:-1px;" href="#" class="btn">分享</a>
+                        <a style="margin-left: 0;font-size:16px;margin-right:-1px;" href="#" class="btn" id="dele-file">删除</a>
+                        <a id="rename" style="margin-left: 0;font-size:16px;margin-right:-1px;" href="#" class="btn">重命名</a>
+                        <a id="move-to-btn" style="margin-left: 0;font-size:16px;margin-right:-1px;" href="#" class="btn">移动到</a>
+                    </div>
+
+
+                    <a href="javascript:;" class="btn toggle-btn"><i class="fa fa-bars"></i> <i class="fa fa-sort-down"></i></a>
+                    <div style="position: absolute;top:48px;right:110px;width:150px;border:1px solid #000;background-color: #fff;" class="bars toggle-box">
+                        <ul style="list-style: none;padding:10px;line-height: 30px;">
+                            <li><a id="list" href="javascript:;">列表</a></li>
+                            <li><a id="thumb" href="javascript:;">缩略图</a></li>
+                        </ul>
+                    </div>
+                    <a href="javascript:;" class="btn btn-primary toggle-btn"><i class="fa fa-plus"></i> <span>添加</span></a>
+                    <div style="position: absolute;top:48px;right:5px;width:150px;border:1px solid #000;background-color: #fff;" class="plus toggle-box">
+                        <ul style="list-style: none;padding:10px;line-height: 30px;">
+                            <li><a id="new-file" href="javascript:;">新建文件夹</a></li>
+                            <li><a href="javascript:;">缩略图1</a></li>
+                            <li><a href="javascript:;">缩略图1</a></li>
+                            <li><a href="javascript:;">缩略图1</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="crumbs-btn">
+                    <span class="icon all"><i class="fa fa-circle-o "></i> | </span>
+
+                </div>
+            </div>
+
+            <div class="list clearFix">
+
+                <div class="list-item list-header">
+                    <div class="name">
+
+                        <div style="">名称 <i class="fa fa-sort-amount-desc"></i></div>
+
+                        <div class="edit-time">修改时间 <i class="fa fa-sort-amount-desc"></i></div>
+                        <div class="file-size">大小</div>
+                    </div>
+
+
+                </div>
+                <div class="list-content">
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+        <!--左翅膀-->
+        <div class="side">
+            <div class="side-heading">
+                <a href="#" class="ava"><img src="https://thirdqq.qlogo.cn/g?b=sdk&k=RyDCpmzwYOPrGOZnRCpI6Q&s=640&t=1483317506" alt=""></a>
+            </div>
+            <div class="side-body">
+                <div class="btns">
+                    <a class="btn" href="#">开通</a>
+                </div>
+                <div class="menu clearFix">
+
+                </div>
+                <div class="footer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--移动到框架-->
+<div id="move-to">
+
+</div>
+
+
+<!--请求的数据-->
+<script src="js/data.js"></script>
+
+<!--生成结构的js-->
+<script src="js/template.js"></script>
+
+<!--操作元素的公共方法-->
+<script src="js/common.js"></script>
+
+<!--一些全局公共的方法-->
+<script id="commonjs" src="../commom.js"></script>
+
+
+
+
+
+
+<script>
+
+    var search = editSearch();
+
+    //定义默认显示的内容
+    var defaultContent = search.dir||'zj';
+
+
+
+    //生成面包屑内容
+    var crumbsBox = document.querySelector('.crumbs-btn');
+    crumbsBox.innerHTML += createBreadCrumb(defaultContent,content);
+
+    //给面包屑的a标签添加点击事件
+    var crumbBtns = crumbsBox.querySelectorAll('a');
+    for(var i=0;i<crumbBtns.length;i++){
+        crumbBtns[i].onclick = function(){
+            //拿到路由
+            var route = search.dir.split('_');
+            //根据mark标记裁切路由内容
+            route = route.slice(0,this.getAttribute('mark')- -1);
+            editSearch('dir',route.join('_'));
+        };
+    }
+
+
+
+    //当前内容关键字
+
+
+    /*
+    * 功能： 记录当前页面显示的右侧内容列表
+    *
+    * 是一个全局变量，只要右侧内容有更新，就要把最新的内容列表更新到currMark中
+    *
+    * */
+    var currMark = getRouteContent(defaultContent,content);
+
+
+    //右侧内容的盒子
+    var contentBox = document.querySelector('.list-content');
+
+
+    //给当前页面生成侧栏菜单
+    createMenu(menu,document.querySelector('.menu'));
+
+    //生成默认显示的右侧内容
+    createContent(currMark,contentBox);
+
+
+    //获取左侧菜单
+    var sideMenu = document.querySelectorAll('.menu li a');
+    //根据默认数据标记当前显示的是那一条菜单的内容
+    var xMark = defaultContent.split('_');
+    var currMarkDom =  markSideMenu(sideMenu,xMark[0]);
+
+    //菜单的点击事件 （切换右侧内容）
+    for(var i=0;i<sideMenu.length;i++){
+        sideMenu[i].onclick = function(){
+
+//      currMark = content[this.getAttribute('mark')];
+
+            //http://localhost:63342/Courseware/20171206/2.%E5%BE%AE%E4%BA%91%E7%BB%93%E6%9E%84.html?dir=qb  dir=zj_0_0
+
+
+            //显示对应内容
+//            createContent(currMark,contentBox);
+//            addClick();
+            //标记
+//            currMarkDom.className = '';
+//            currMarkDom = markSideMenu(sideMenu,this.getAttribute('mark'));
+
+            //保存一下当前值 url中存起来
+//            window.location.search = 'dir='+this.getAttribute('mark');
+            editSearch('dir',this.getAttribute('mark'));
+        };
+    }
+
+    //内容列表的点击事件
+    addClick();
+    function addClick(){
+        var contentList = document.querySelectorAll('.list-content a');
+        for(var i=0;i<contentList.length;i++){
+            contentList[i].onclick = function(){
+                //显示子集内容
+                //找对应要显示的列表？
+//                currMark = currMark[this.getAttribute('mark')].child;
+//                createContent(currMark,contentBox); // zj_qq
+//                addClick();
+
+                editSearch('dir',defaultContent+'_'+this.getAttribute('mark'));
+
+
+            };
+        }
+    }
+
+    /*
+    * 1.思考： 如果有第三层 如何实现显示内容的效果
+    * */
+
+
+
+
+    /*
+    * 界面的交互效果
+    *
+    * */
+
+    //搜索框的长短变化
+    searchBox(document.querySelector('.search'));
+
+    //任务列表交互
+    var _manager = document.querySelector('#_manager');
+
+    var headLis = _manager.querySelectorAll('li');
+    var line = _manager.querySelector('.line');
+
+    //默认样式
+    var prevAct = headLis[0];
+
+    for(var i=0;i<headLis.length-1;i++){
+        headLis[i].onclick = function(){
+            //获取当前点击的li的 width
+            //给当前li加上active
+            var w = this.offsetWidth;
+            prevAct.className = '';
+            prevAct = this;
+            prevAct.className = 'active';
+
+            MTween({
+                obj:line,
+                attrs:{
+                    left:this.offsetLeft+'px',
+                    width:w+'px'
+                },
+                duration:200
+            });
+//            line.style.width = w+'px';
+//            line.style.left = this.offsetLeft+'px';
+
+
+        };
+    }
+
+    var a = _manager.previousElementSibling;
+
+    //阻止 _manager 任务列表框事件冒泡行为
+    _manager.onclick = function(ev){
+        var ev = ev || event;
+        ev.cancelBubble = true;
+        ev.stopPropagation();
+    }
+    a.openState = false;//任务列表未打开
+    a.onclick = function(ev){
+
+        var _this = this;
+
+        if(_this.openState){
+            //正处于打开状态，点击需要将其关闭
+            _this.style.color = '#000';
+            MTween({
+                obj:_manager,
+                begins:{
+                    opacity:1
+                },
+                attrs:{
+                    width:'200px',
+                    height:'200px',
+                    opacity:0
+                },
+                duration:200,
+                callBack:function(){
+                    _manager.style.display = 'none';
+                    _this.openState = false;
+                }
+            });
+        }else{
+            //正处于关闭状态，点击需要将其打开
+            _manager.style.display = 'block';
+            _this.style.color = '#0066FF';
+
+            //初始化li线条样式
+            line.style.width = prevAct.offsetWidth+'px';
+            line.style.left = prevAct.offsetLeft+'px';
+
+            MTween({
+                obj:_manager,
+                begins:{
+                    opacity:0
+                },
+                attrs:{
+                    width:'400px',
+                    height:'400px',
+                    opacity:1
+                },
+                duration:300,
+                way:'backOut',
+                callBack:function(){
+                    _this.openState = true;
+                }
+            });
+        }
+    };
+
+    //个人信息
+    var infoBtn = document.querySelector('#personal');
+    var infoBox = infoBtn.nextElementSibling;
+
+    infoBox.state = false;
+
+    infoBox.onclick = function(ev){
+        var ev = ev || event;
+        ev.cancelBubble = true;
+        ev.stopPropagation();
+    };
+
+    infoBtn.onclick = function(ev){
+
+        //i标签旋转180
+        var _this = this;
+        var i = _this.children[0];
+
+        if(infoBox.state){
+            i.style.transform = 'rotateZ(0deg)';
+            infoBox.style.display = 'none';
+            setTimeout(function(){
+                infoBox.state = false;
+            },20);
+        }else{
+            i.style.transform = 'rotateZ(180deg)';
+            infoBox.style.display = 'block';
+            setTimeout(function(){
+                infoBox.state = true;
+            },20);
+
+        }
+    };
+
+    //通用的信息展示效果
+    var box = null;
+
+    toggle();
+    function toggle(){
+        var btns = document.querySelectorAll('.toggle-btn');
+        var boxs = document.querySelectorAll('.toggle-box');
+
+        //按钮添加点击事件  用来打开或者关闭盒子的显示状态
+        for(var i=0;i<btns.length;i++){
+
+            boxs[i].onclick = function(ev){
+//                var ev = ev || event;
+//                ev.cancelBubble = true;
+//                ev.stopPropagation();
+            };
+
+            btns[i].index = i;//索引 索引可以用来找对应的内容盒子
+            btns[i].onclick = function(ev){
+
+                var box1 = boxs[this.index];
+
+                //关闭上次打开过的盒子 （这个盒子不能是当前要打开的盒子）  关闭老盒子
+                if(box&&box!=box1){
+//                    box.style.display = 'none';
+//                    box.state = false;
+                    MTween({
+                        obj:box,
+                        begins:{
+                            opacity:1
+                        },
+                        attrs:{
+                            height:'10px',
+                            opacity:0
+                        },
+                        duration:100,
+                        callBack:function(){
+                            box.style.display = 'none';
+                            box.state = false;
+                        }
+                    });
+                }
+
+                //打开新的盒子
+                if(!box1.state){
+                    box1.style.display = 'block';
+                    MTween({
+                        obj:box1,
+                        begins:{
+                            opacity:0
+                        },
+                        attrs:{
+                            height:box1.scrollHeight+'px',
+                            opacity:1
+                        },
+                        duration:100,
+                        callBack:function(){
+                            box1.state = true;
+                            box = box1;
+                        }
+                    });
+                }
+
+
+            };
+        }
+
+
+    }
+
+
+    /*
+    * 适配内容高度
+    * */
+    var sideBody = document.querySelector('.side-body');
+    var listContent = document.querySelector('.list-content');
+
+    autoHeight(sideBody);
+    autoHeight(listContent);
+
+    function autoHeight(ele){
+        var wHeight = window.innerHeight;
+
+        var offsetTop = getOffset(ele,'offsetTop');
+
+        var h = wHeight-offsetTop;
+        ele.style.height = h+'px';
+
+    }
+
+
+    //保存被选中的元素
+    var selectedElement = [];
+
+    //保存元素的方法：
+    function saveElement(obj){
+        for(var i=0;i<selectedElement.length;i++){
+            if(obj==selectedElement[i]){
+                return;
+            }
+        }
+        selectedElement.push(obj);
+    }
+    //删除取消选中的元素
+    function deleElement(obj){
+        for(var i=0;i<selectedElement.length;i++){
+            if(obj==selectedElement[i]){
+                selectedElement.splice(i,1);
+                break;
+            }
+        }
+    }
+
+
+
+    /*
+    * 全选功能
+    * */
+
+    checkAll();
+
+    var num = 0; //选中的个数
+
+    function checkAll(){
+
+        selectedElement = [];
+
+        var allBtn = document.querySelector('.all');
+        var checkBoxes = document.querySelectorAll('.list-content .check-box');
+        var tool = document.querySelector('#tool');
+
+        //重命名按钮
+        var renameBtn = document.querySelector('#rename');
+
+
+        allBtn.state = false;//为全选
+
+        //框选的交互方式
+        kxBox({
+            box:document.querySelector('.list'),
+            eles:document.getElementsByClassName('list-con'),
+            colli:function(o){
+                //选中
+                var checkBox = o.querySelector('.check-box');
+                var i = checkBox.querySelector('i');
+                checkBox.style.color = 'blue';
+                i.className = 'fa fa-check-circle-o';
+                checkBox.parentNode.className = 'active';
+
+                allBtn.style.display = 'inline';
+
+                saveElement(o);
+
+                num = selectedElement.length;
+
+                //检查是否全选
+                if(num==checkBoxes.length){
+                    allBtn.style.color = 'blue';
+                    allBtn.children[0].className = 'fa fa-check-circle-o';
+                    allBtn.state = true;
+                }else{
+                    allBtn.style.color = '';
+                    allBtn.children[0].className = 'fa fa-circle-o';
+                    allBtn.state = false;
+                }
+
+                //处理整个工具条的变化
+                if(num<=0){
+                    tool.style.display = 'none';
+                }else{
+                    tool.style.display = 'block';
+                }
+
+                //处理重命名按钮变化
+                if(num<=1){
+                    renameBtn.style.display = 'inline-block';
+                }else{
+                    renameBtn.style.display = 'none';
+                }
+
+
+            },
+            uncolli:function(o){
+                //取消选中
+                var checkBox = o.querySelector('.check-box');
+                var i = checkBox.querySelector('i');
+                checkBox.style.color = '';
+                i.className = 'fa fa-circle-o';
+                checkBox.parentNode.className = '';
+
+                deleElement(o);//删除取消选中的
+
+                num = selectedElement.length;
+
+                //检查是否全选
+                if(num==checkBoxes.length){
+                    allBtn.style.color = 'blue';
+                    allBtn.children[0].className = 'fa fa-check-circle-o';
+                    allBtn.state = true;
+                }else{
+                    allBtn.style.color = '';
+                    allBtn.children[0].className = 'fa fa-circle-o';
+                    allBtn.state = false;
+                }
+
+                //处理整个工具条的变化
+                if(num<=0){
+                    tool.style.display = 'none';
+                    allBtn.style.display = 'none';
+                }else{
+                    tool.style.display = 'block';
+                }
+
+                //处理重命名按钮变化
+                if(num<=1){
+                    renameBtn.style.display = 'inline-block';
+                }else{
+                    renameBtn.style.display = 'none';
+                }
+
+            }
+        });
+
+
+        //点击的交互方式
+        //单独选择按钮
+        for(var i=0;i<checkBoxes.length;i++){
+
+            //hover效果
+            checkBoxes[i].onmouseover = function(){
+                this.style.color = 'blue';
+            };
+            checkBoxes[i].onmouseout = function(){
+                if(this.parentNode.className != 'active'){
+                    this.style.color = '';
+                }
+
+            };
+
+
+
+            checkBoxes[i].onclick = function(ev){
+                //阻止冒泡  防止点击更新内容
+                var ev = ev || event;
+                ev.cancelBubble = true;
+                ev.stopPropagation();
+
+                var i = this.children[0];
+
+
+                if(this.parentNode.className == 'active'){
+                    //取消选中
+                    this.style.color = '';
+                    i.className = 'fa fa-circle-o';
+                    this.parentNode.className = '';
+                    num--;
+
+                    if(num==0){
+                        allBtn.style.display = 'none';
+                    }
+
+                    deleElement(this.parentNode.parentNode);
+
+                }else{
+                    //选中
+                    this.style.color = 'blue';
+                    i.className = 'fa fa-check-circle-o';
+                    this.parentNode.className = 'active';
+
+                    num++;
+                    allBtn.style.display = 'inline';
+
+                    saveElement(this.parentNode.parentNode);
+                }
+
+                //检查是否全选
+                if(num==checkBoxes.length){
+                    allBtn.style.color = 'blue';
+                    allBtn.children[0].className = 'fa fa-check-circle-o';
+                    allBtn.state = true;
+                }else{
+                    allBtn.style.color = '';
+                    allBtn.children[0].className = 'fa fa-circle-o';
+                    allBtn.state = false;
+                }
+                //处理重命名按钮变化
+                if(num<=1){
+                    renameBtn.style.display = 'inline-block';
+                }else{
+                    renameBtn.style.display = 'none';
+                }
+                //处理整个工具条的变化
+                if(num<=0){
+                    tool.style.display = 'none';
+                }else{
+                    tool.style.display = 'block';
+                }
+            };
+        }
+
+        //总选择按钮
+        allBtn.onclick = function(){
+
+            this.state = !this.state;//全选按钮的状态变化
+
+            if(this.state){
+                allBtn.style.color = 'blue';
+                allBtn.children[0].className = 'fa fa-check-circle-o';
+                allBtn.state = true;
+                num = checkBoxes.length;
+
+                renameBtn.style.display = 'none';//关闭重命名按钮
+
+
+            }else{
+                allBtn.style.color = '';
+                allBtn.children[0].className = 'fa fa-circle-o';
+                allBtn.state = false;
+                allBtn.style.display = 'none';
+                num = 0;
+                selectedElement = [];//清空被选中
+            }
+
+            //处理整个工具条的变化
+            if(num<=0){
+                tool.style.display = 'none';
+            }else{
+                tool.style.display = 'block';
+            }
+
+            //根据全选按钮的状态设置单独选择的按钮状态
+            for(var j=0;j<checkBoxes.length;j++){
+                var checkBox = checkBoxes[j];
+                var i = checkBox.children[0];
+                if(this.state){
+                    //选中
+                    checkBox.style.color = 'blue';
+                    i.className = 'fa fa-check-circle-o';
+                    checkBox.parentNode.className = 'active';
+
+                    saveElement(this.parentNode.parentNode);
+
+                }else{
+                    //取消选中
+                    checkBox.style.color = '';
+                    i.className = 'fa fa-circle-o';
+                    checkBox.parentNode.className = '';
+                }
+            }
+        };
+    }
+
+
+    /*
+    * 新建文件夹功能
+    *-------------------------------------------*/
+
+    var fileBtn = document.querySelector('#new-file');
+
+    fileBtn.onclick = function(){
+        //点击按钮在json中添加一个内容
+        var date = new Date();
+        var json = {
+            title:'新建文件夹',
+            name:'',
+            editTime:date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate(),
+            fileSize:0
+        };
+
+        //创建模板
+        var content_html = document.createElement('div');
+        content_html.className = 'list-item list-con';
+        content_html.innerHTML = '<a href="javascript:void(0);"  mark="'+i+'">'+
+            '<div class="check-box"><i class="fa fa-circle-o"></i></div>'+
+            '<div class="file"><i class="fa fa-folder"></i></div>'+
+            '<div class="name">'+
+            '<div style="">' +
+            '<input type="text" value="'+json.title+'">' +
+            '</div>'+
+            '<div class="edit-time">'+json.editTime+'</div>'+
+            '<div class="file-size">'+(json.fileSize||'-')+'</div>'+
+            '</div>'+
+            '</a>';
+
+        contentBox.insertBefore(content_html,contentBox.firstElementChild);
+
+        //选中input内容
+        var input = content_html.querySelector('input');
+        input.select();
+        input.onblur = function(){
+
+            json.title = this.value;
+
+            currMark.unshift(json);
+            createContent(currMark,contentBox);
+            addClick();
+            checkAll();
+        };
+    };
+
+
+
+
+    /*-----------------------------------------*/
+
+
+    /*
+    * 删除文件夹
+    * -----------------------------
+    * */
+    var deleBtn = document.querySelector('#dele-file');
+    console.log(currMark);
+    deleBtn.onclick = function(){
+        //currMark  selectedElement
+        for(var i=0;i<selectedElement.length;i++){
+            var key = selectedElement[i].querySelector('a').getAttribute('key');
+            //遍历currMark内容
+            for(var j=0;j<currMark.length;j++){
+                if(currMark[j].name==key){
+                    currMark.splice(j,1);
+                    break;
+                }
+            }
+
+        }
+
+        selectedElement = [];//清空被选中的列表
+
+        console.log(currMark);
+        createContent(currMark,contentBox);
+        addClick();
+        checkAll();
+
+        return false;//阻止a标签的默认行为
+
+    };
+
+
+    /*--------------------------------*/
+
+
+    /*
+    * 重命名
+    * ------------------
+    * */
+    var renameBtn = document.querySelector('#rename');
+    renameBtn.onclick = function(){
+        if(selectedElement.length<=0) return;//容错处理
+
+        var nameBox = selectedElement[0].querySelector('.name div:nth-of-type(1)');
+
+        var key = selectedElement[0].querySelector('a').getAttribute('key');
+
+        var text = nameBox.innerHTML;//线保存一下原来的数据
+
+        var input = document.createElement('input');
+        input.value = text;
+        nameBox.innerHTML = '';
+
+        input.onblur = function(){
+            for(var i=0;i<currMark.length;i++){
+                if(currMark[i].name==key){
+                    currMark[i].title = this.value;
+                }
+            }
+
+            //更新内容
+            createContent(currMark,contentBox);
+            addClick();
+            checkAll();
+        };
+
+        nameBox.appendChild(input);
+        input.select();
+
+    };
+
+
+    /*------------------------*/
+
+
+    /*
+    * 移动到功能
+    * -----------------------------------
+    * */
+    var moveToBox = document.querySelector('#move-to');
+
+    var moveToBtn = document.querySelector('#move-to-btn');
+
+    moveToBtn.onclick = function(ev){
+        var ev = ev||event;
+        ev.cancelBubble = true;
+        ev.stopPropagation();
+        moveToBox.style.display = 'block';
+        return false;
+    };
+
+    //生成菜单
+    createMenu(menu,moveToBox);
+    fn1();
+
+    //给li添加点击事件
+    function fn1(){
+        var menuLi = moveToBox.querySelectorAll('li');
+        for(var i=0;i<menuLi.length;i++){
+
+            //双击事件 移动文件
+            menuLi[i].ondblclick = function(ev){
+
+                var ev = ev||event;
+                ev.cancelBubble = true;
+                ev.stopPropagation();
+
+                //转移到的数据位置
+                var dir = this.querySelector('a').getAttribute('dir');
+                if(!isNaN(dir)){
+                    dir = this.querySelector('a').getAttribute('mark');
+                }
+
+                var toMenu = getRouteContent(dir,content);
+
+
+                if(!toMenu) return;
+
+                /*
+                * 已知：   要移动的数据  selectedElement
+                *           route  this.a.dir
+                *           getRouteContent(route,content)
+                * */
+
+                //拿要转移的数据
+//                var selectedData = [];
+
+                for(var i=0;i<selectedElement.length;i++){
+                    var a = selectedElement[i].querySelector('a');
+                    var key = a.getAttribute('key');
+
+                    for(var j=0;j<currMark.length;j++){
+                        if(currMark[j].name==key){
+//                            selectedData.push(currMark[j]);
+                            toMenu.unshift(currMark[j]);
+
+                            currMark.splice(j,1);
+                            j--;
+
+                        }
+                    }
+                }
+
+
+                moveToBox.style.display = 'none';
+
+
+                console.log(content);
+
+                //更新内容
+                createContent(currMark,contentBox);
+                addClick();
+                checkAll();
+
+
+
+            };
+
+            //点击事件展开子集
+            menuLi[i].onclick = function(ev){
+
+                var ev = ev||event;
+                ev.cancelBubble = true;
+                ev.stopPropagation();
+
+                var a = this.querySelector('a');
+                var dir = isNaN(a.getAttribute('dir'))?a.getAttribute('dir'):a.getAttribute('mark');
+//                console.log(dir);
+                var conList = getRouteContent(dir,content);
+
+
+                //阻止重复添加
+                if(!conList||this.querySelector('ul')) return;
+
+                var json = {
+
+                };
+                json[a.getAttribute('mark')] = conList;
+
+                createMenu(json,this);
+
+                fn1();
+
+            };
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+    /*--------------------------------*/
+
+
+
+
+    //统一document的事件处理
+    document.onclick = function(){
+
+        /*
+         * 关闭任务列表
+         * */
+        if(a.openState){
+            a.style.color = '#000';
+            MTween({
+                obj:_manager,
+                begins:{
+                    opacity:1
+                },
+                attrs:{
+                    width:'200px',
+                    height:'200px',
+                    opacity:0
+                },
+                duration:200,
+                callBack:function(){
+                    _manager.style.display = 'none';
+                    a.openState = false;
+                }
+            });
+        }
+
+        /*
+         * 关闭个人信息
+         * */
+        if(infoBox.state){
+            infoBtn.children[0].style.transform = 'rotateZ(0deg)';
+            infoBox.style.display = 'none';
+            infoBox.state = false;
+        }
+
+
+        /*
+         * 关闭通用消息盒子
+         * */
+        if(box&&box.state){
+            MTween({
+                obj:box,
+                begins:{
+                    opacity:1
+                },
+                attrs:{
+                    height:'10px',
+                    opacity:0
+                },
+                duration:100,
+                callBack:function(){
+                    box.style.display = 'none';
+                    box.state = false;
+                }
+            });
+        }
+
+        /*
+        * 清除选择状态
+        * */
+        var allBtn = document.querySelector('.all');
+        var checkBoxes = document.querySelectorAll('.list-content .check-box');
+        var tool = document.querySelector('#tool');
+
+        //重命名按钮
+        var renameBtn = document.querySelector('#rename');
+
+        allBtn.style.color = '';
+        allBtn.children[0].className = 'fa fa-circle-o';
+        allBtn.state = false;
+        allBtn.style.display = 'none';
+        num = 0;
+
+        //处理整个工具条的变化
+        if(num<=0){
+            tool.style.display = 'none';
+        }else{
+            tool.style.display = 'block';
+        }
+
+        //根据全选按钮的状态设置单独选择的按钮状态
+        for(var j=0;j<checkBoxes.length;j++){
+            console.log(1111);
+            var checkBox = checkBoxes[j];
+            var i = checkBox.children[0];
+            if(this.state){
+                //选中
+                checkBox.style.color = 'blue';
+                i.className = 'fa fa-check-circle-o';
+                checkBox.parentNode.className = 'active';
+
+            }else{
+                //取消选中
+                checkBox.style.color = '';
+                i.className = 'fa fa-circle-o';
+                checkBox.parentNode.className = '';
+            }
+        }
+
+
+
+    };
+
+    //统一管理窗口变化时处理的内容
+    window.onresize = function(){
+        //适配高度
+        autoHeight(sideBody);
+        autoHeight(listContent);
+    };
+
+
+
+
+</script>
+
+
+</body>
+</html>
